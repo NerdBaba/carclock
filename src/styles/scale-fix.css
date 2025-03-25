@@ -1,0 +1,35 @@
+/**
+ * CSS fixes for Windows browser scaling issues 
+ */
+
+/* Apply to html element with scale-fix class */
+html.scale-fix {
+  /* Ensure text size remains consistent */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* IE specific fixes */
+  html.scale-fix {
+    -ms-overflow-style: scrollbar;
+  }
+}
+
+/* Edge and newer Chrome on Windows specific fixes */
+@supports (-ms-ime-align:auto) or (-webkit-text-size-adjust:none) {
+  html.scale-fix body {
+    /* Force 100% zoom level as a backup method */
+    zoom: 100%;
+  }
+}
+
+/* Prevent iOS font scaling */
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance:none) {
+    html.scale-fix {
+      -webkit-font-smoothing: antialiased;
+    }
+  }
+} 
