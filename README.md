@@ -1,29 +1,85 @@
-# Create T3 App
+# CarClock
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+CarClock is a web application that provides a digital clock interface, designed to be used in vehicles or as a simple, always-on display.
 
-## What's next? How do I make an app with this?
+## Website
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+You can access the live website at: [https://carclock.vercel.app/](https://carclock.vercel.app/)
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+## Technologies Used
 
-## Learn More
+*   **Next.js:** A React framework for building web applications.
+*   **React:** A JavaScript library for building user interfaces.
+*   **Tailwind CSS:** A utility-first CSS framework for styling the application.
+*   **Prisma:** A modern database toolkit for type-safe database access.
+*   **Drizzle:** A modern TypeScript ORM.
+*   **tRPC:** End-to-end typesafe APIs.
+*   **Radix UI:** A set of unstyled, accessible UI primitives.
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+## Getting Started
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+To get started with the project locally, follow these steps:
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+### Prerequisites
 
-## How do I deploy this?
+*   Node.js (>=18)
+*   npm or Yarn
+*   Docker (optional, for database)
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+### Installation
+
+1.  Clone the repository:
+
+    ```bash
+    git clone <repository_url>
+    cd carclock
+    ```
+
+2.  Install dependencies:
+
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+3.  Set up the database:
+
+    *   **Using Docker:**
+        ```bash
+        docker-compose up -d
+        npm run db:push
+        ```
+
+    *   **Manually:**
+        *   Install a PostgreSQL database.
+        *   Configure the database connection in the `.env` file.
+        *   Run `npm run db:migrate` to apply migrations.
+
+4.  Configure Environment Variables:
+
+    Create a `.env` file in the root directory and add the necessary environment variables. See `.env.example` for the required variables.
+
+5.  Start the development server:
+
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
+
+    Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
+
+## Scripts
+
+*   `npm run dev`: Starts the development server.
+*   `npm run build`: Builds the application for production.
+*   `npm run start`: Starts the production server.
+*   `npm run lint`: Runs ESLint for code linting.
+*   `npm run format:write`: Formats the code using Prettier.
+*   `npm run typecheck`: Runs TypeScript type checking.
+*   `npm run db:generate`: Generates the Prisma client.
+*   `npm run db:migrate`: Applies database migrations.
+*   `npm run db:push`: Pushes the database schema.
+*   `npm run db:studio`: Opens Prisma Studio.
