@@ -1,6 +1,7 @@
 # CarClock
 
 CarClock is a web application that provides a digital clock interface, designed to be used in vehicles or as a simple, always-on display.
+![image](https://github.com/user-attachments/assets/0e4fbb07-6e00-4506-a5aa-9bae1ac8d43b)
 
 ## Website
 
